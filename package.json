@@ -1,0 +1,24 @@
+{
+  "name": "wml-product-search",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --config ./webpack.client.js --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veeracs/wml-product-search.git"
+  },
+  "author": "Chandra Sekhar Veera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veeracs/wml-product-search/issues"
+  },
+  "homepage": "https://github.com/veeracs/wml-product-search#readme",
+  "devDependencies": {
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.9"
+  }
+}
