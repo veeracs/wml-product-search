@@ -6,27 +6,32 @@ module.exports = {
 
   //  tell webpack, where to put the output file generated
   output: {
-    path: __dirname + 'dist',
-    filename: 'bundle.js'
+    path: `${__dirname}dist`,
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader', 'eslint-loader'],
+      },
+    ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
   },
   devServer: {
-        publicPath: '/',
-        contentBase: './dist',
-        hot: true
-  }
+    publicPath: '/',
+    contentBase: './dist',
+    hot: true,
+  },
 };
