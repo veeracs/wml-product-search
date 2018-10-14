@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.client.js --mode development"
+    "start": "webpack-dev-server --config ./webpack.client.js --mode development",
+    "format": "prettier --single-quote --print-width=120 --parser=flow --tab-width=2 --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.4",
+    "prettier": "1.14.3",
     "react-hot-loader": "4.3.11",
     "webpack": "4.20.2",
     "webpack-cli": "3.1.2",
