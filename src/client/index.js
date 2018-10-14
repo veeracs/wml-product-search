@@ -1,15 +1,20 @@
 /* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import {renderRoutes} from 'react-router-config';
+import Routes from './routes';
 
 import 'sanitize.css/sanitize.css';
 
-const App = () => (
-  <div className="home">
-    <h1>Minimal setup - React, Babel, Webpack.</h1>
-  </div>
-);
+const App = () => {
+  return (
+    <BrowserRouter>
+      <div>{renderRoutes(Routes)}</div>
+    </BrowserRouter>
+  );
+}
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.querySelector('#app'));
 
 module.hot.accept();
