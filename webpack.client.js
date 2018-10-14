@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   //  tell webpack, the entry point of server application
   entry: './src/client/index.js',
@@ -16,6 +18,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },

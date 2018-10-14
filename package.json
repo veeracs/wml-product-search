@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --config ./webpack.client.js --mode development"
+    "start": "webpack-dev-server --config ./webpack.client.js --mode development"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.4",
+    "react-hot-loader": "4.3.11",
     "webpack": "4.20.2",
     "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.9"
