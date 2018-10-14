@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.client.js --mode development",
     "format": "prettier --single-quote --print-width=120 --parser=flow --tab-width=2 --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint ./src --quiet"
+    "lint": "eslint ./src --quiet",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,8 +34,10 @@
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-react": "7.11.1",
+    "jest": "23.6.0",
     "prettier": "1.14.3",
     "react-hot-loader": "4.3.11",
+    "react-test-renderer": "16.5.2",
     "style-loader": "0.23.1",
     "webpack": "4.20.2",
     "webpack-cli": "3.1.2",
