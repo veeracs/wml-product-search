@@ -1,9 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
-const Product = () => (
-  <div>Products</div>
-);
+import {fetchItems} from '../actions';
+
+class Products extends Component {
+  componentDidMount() {
+    this.props.fetchItems();
+  }
+
+  render() {
+    return (
+      <div>Products</div>
+    );
+  }
+}
+
+Products.propTypes = {
+  fetchItems: PropTypes.func
+};
+
+function mapStateToProps(state) {
+  return {
+    items: state.items
+  }
+}
 
 export default {
-  component: Product
+  component: connect(mapStateToProps, {fetchItems})(Products)
 };

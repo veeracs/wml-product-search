@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   //  tell webpack, the entry point of server application
-  entry: './src/client/index.js',
+  entry: ['@babel/polyfill', './src/client/index.js'],
 
   //  tell webpack, where to put the output file generated
   output: {
