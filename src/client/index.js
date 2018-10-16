@@ -2,14 +2,13 @@
 /* External Dependencies */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import {renderRoutes} from 'react-router-config';
+import {BrowserRouter, Route} from 'react-router-dom';
 import {applyMiddleware, createStore, compose} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 
 /* Internal Dependencies */
-import Routes from './routes';
+import App from '../app';
 import rootReducer from '../app/reducers';
 
 /* CSS */
@@ -24,16 +23,16 @@ const store = createStore(
   )
 );
 
-const App = () => {
+const Site = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div>{renderRoutes(Routes)}</div>
+        <App />
       </BrowserRouter>
     </Provider>
   );
 }
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+ReactDOM.render(<Site />, document.querySelector('#wml-product-search'));
 
 module.hot.accept();

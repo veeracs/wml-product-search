@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {fetchItems} from '../actions';
 
-class Products extends Component {
+class ProductPage extends Component {
   componentDidMount() {
     this.props.fetchItems();
   }
@@ -16,7 +16,7 @@ class Products extends Component {
   }
 }
 
-Products.propTypes = {
+ProductPage.propTypes = {
   fetchItems: PropTypes.func
 };
 
@@ -26,6 +26,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default {
-  component: connect(mapStateToProps, {fetchItems})(Products)
-};
+export default connect(mapStateToProps, {fetchItems})(ProductPage);
