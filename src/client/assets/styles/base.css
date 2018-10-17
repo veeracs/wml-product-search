@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+textarea,
+select,
+input,
+button {
+  outline: none;
+}
+
+main {
+  margin: 0 auto 5% auto;
+  max-width: 1500px;
+  min-width: 400px;
+}
+
+/*** Flexbox ***/
+.flex-grid {
+  display: flex;
+}
+
+.col {
+  flex: 1
+}
+
+/* Small Screens */
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+  }
+}
+
+/* Gutters */
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-grid-thirds .col {
+  width: 32%;
+}
+
+/*** Grid ***/
+

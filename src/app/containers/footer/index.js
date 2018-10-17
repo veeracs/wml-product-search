@@ -1,7 +1,9 @@
 import React from 'react';
 
+import './index.css';
+
 const Footer = () => (
-  <footer>Footer</footer>
+  <footer>© 2018 wml</footer>
 );
 
 export default Footer;

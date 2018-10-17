@@ -11,7 +11,7 @@ class ProductPage extends Component {
 
   render() {
     return (
-      <div>Products</div>
+      <main>Product</main>
     );
   }
 }

@@ -1,0 +1,9 @@
+footer {
+  font-size: .8em;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #eee;
+  padding: 1.5% 1%;
+  background-color: #f5f5f5;
+}

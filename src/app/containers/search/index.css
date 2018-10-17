@@ -1,0 +1,44 @@
+
+.search-container {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 0.5rem 0.5rem 0.5rem 0.8em;
+  flex: 1 0 8em;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  border-right: 0;
+  font-size: 16px;
+}
+
+.search-button {
+  background: #538ac5;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0 5px 5px 0;
+  border-color: #538ac5;
+  cursor: pointer;
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}

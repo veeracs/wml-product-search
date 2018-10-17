@@ -13,6 +13,7 @@ import rootReducer from '../app/reducers';
 
 /* CSS */
 import 'normalize.css/normalize.css';
+import './assets/styles/base.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

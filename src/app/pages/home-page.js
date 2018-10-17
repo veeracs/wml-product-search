@@ -1,7 +1,11 @@
 import React from 'react';
 
+import Results from '../containers/results';
+
 const HomePage = () => (
-  <div>HomePage</div>
+  <main>
+    <Results />
+  </main>
 );
 
 export default HomePage;
