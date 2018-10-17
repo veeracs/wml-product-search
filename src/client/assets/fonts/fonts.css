@@ -1,6 +1,4 @@
 @font-face {
 	font-family: 'BogleWebBlack';
-	src:
-		url('./BogleWeb-Black.woff2') format('woff2'),
-		url('./BogleWeb-Black.woff') format('woff');
+	src: url('BogleWeb-Black.woff2') format('woff2')
 }

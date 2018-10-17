@@ -1,4 +1,8 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+
+console.log(path.resolve(__dirname, './src/client/assets/fonts/'));
 
 module.exports = {
   //  tell webpack, the entry point of server application
@@ -24,13 +28,22 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader', {loader: 'css-loader', options: {url: false}}
+          'style-loader',
+          {loader: 'css-loader', options: {url: false}}
         ]
       }
-    ],
+    ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './src/client/assets/fonts/'),
+        to: path.resolve(__dirname, './dist')
+      }
+    ],
+    { copyUnmodified: true }
+    )
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
