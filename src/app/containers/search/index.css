@@ -1,8 +1,15 @@
 
 .search-container {
-  width: 400px;
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+  padding: 0 15%;
+}
+
+@media only screen and (min-width: 75em) {
+  .search-container {
+    padding: 0 25%;
+  }
 }
 
 .search-input {

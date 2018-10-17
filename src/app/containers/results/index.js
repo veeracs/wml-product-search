@@ -4,23 +4,80 @@ import './index.css';
 
 const Results = () => {
   return (
-    <div class="grid">
-      <div className="module">1</div>
-      <div className="module">2</div>
-      <div className="module">3</div>
-      <div className="module">4</div>
-      <div className="module">5</div>
-      <div className="module">6</div>
-      <div className="module">7</div>
-      <div className="module">8</div>
-      <div className="module">9</div>
-      <div className="module">10</div>
-      <div className="module">11</div>
-      <div className="module">12</div>
-      <div className="module">13</div>
-      <div className="module">14</div>
-      <div className="module">15</div>
-    </div>
+    <section class="products">
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div className="product-card">
+        <div className="product-image">
+          <img src="https://via.placeholder.com/160x220" />
+        </div>
+        <div className="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+    </section>
   );
 }
 
