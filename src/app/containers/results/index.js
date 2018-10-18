@@ -4,7 +4,7 @@ import './index.css';
 
 const Results = () => {
   return (
-    <section class="products">
+    <section className="products">
       <div className="product-card">
         <div className="product-image">
           <img src="https://via.placeholder.com/160x220" />

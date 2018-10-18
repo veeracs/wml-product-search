@@ -21,7 +21,7 @@ export default (state = defaultState, action) => {
     case FETCH_ITEMS_SUCCESS:
       return {
         ...state,
-        payload: action.payload.items,
+        payload: action.payload,
         isLoading: false,
         isError: false,
         isSuccess: true

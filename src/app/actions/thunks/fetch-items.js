@@ -21,13 +21,13 @@ const fetchItemsSuccess = (payload) => ({
 });
 
 /* Thunk */
-export const fetchItems = () => async (dispatch) => {
+export const fetchItems = (query) => async (dispatch) => {
   dispatch(fetchItemsStart());
 
   let response;
 
   try {
-    response = await getItems();
+    response = await getItems(query);
   } catch(error) {
     dispatch(fetchItemsFailure(error));
   }
