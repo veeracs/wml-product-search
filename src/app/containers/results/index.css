@@ -1,9 +1,5 @@
 
 .products {
-  /* Grid Fallback */
-  display: flex;
-  flex-wrap: wrap;
-
   /* Supports Grid */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -36,4 +32,8 @@
   .product-info {
     text-align: center;
   }
+}
+
+h6 {
+  font-size: 1em;
 }

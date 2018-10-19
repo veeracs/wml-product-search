@@ -11,7 +11,6 @@ class Search extends Component {
   }
 
   render() {
-
     return (
       <form onSubmit={this.props.handleSubmit}>
         <input className="search-input" type="search" name="query" />
