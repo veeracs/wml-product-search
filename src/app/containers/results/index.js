@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 import './index.css';
 
@@ -10,10 +11,10 @@ const renderItems = (items) => {
       return (
         <div key={item.itemId} className="product-card">
           <div className="product-image">
-            <img src={item.thumbnailImage} />
+            <Link to={`/product/${item.itemId}`}><img src={item.thumbnailImage} /></Link>
           </div>
           <div className="product-info">
-            <h5>{item.name}</h5>
+            <h5><Link to={`/product/${item.itemId}`}>{item.name}</Link></h5>
             {item.customerRating && <span><img src={item.customerRatingImage} /></span>}
             <h6>${item.salePrice}</h6>
           </div>

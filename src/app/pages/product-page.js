@@ -2,28 +2,43 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {fetchItems} from '../actions';
+import {fetchProduct} from '../actions';
+
+import Product from '../containers/product';
+import Results from '../containers/results';
 
 class ProductPage extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
-    this.props.fetchItems();
+    this.props.fetchProduct(this.props.match.params.id);
   }
 
   render() {
     return (
-      <main>Product</main>
+      <main>
+        <Product
+            info={this.props.productInfo}
+            id={this.props.match.params.id}
+          />
+        <Results />
+      </main>
     );
   }
 }
 
 ProductPage.propTypes = {
-  fetchItems: PropTypes.func
+  productInfo: PropTypes.object,
+  match: PropTypes.object,
+  fetchProduct: PropTypes.func
 };
 
 function mapStateToProps(state) {
   return {
-    items: state.items
+    productInfo: state.product.payload
   }
 }
 
-export default connect(mapStateToProps, {fetchItems})(ProductPage);
+export default connect(mapStateToProps, {fetchProduct})(ProductPage);
