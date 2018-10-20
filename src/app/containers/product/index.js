@@ -7,10 +7,14 @@ const Product = ({id, info}) => {
   return (
     <section className="grid-container">
       <div className="grid-item-1">
-        Product {id}
+        <section>
+          <img src={info.largeImage} alt="product image" />
+        </section>
       </div>
       <div className="grid-item-2">
-        Product Info
+        <h1>{info.name}</h1>
+        <span>${info.salePrice}</span>
+        <article dangerouslySetInnerHTML={{__html: info.shortDescription}}></article>
       </div>
     </section>
   );

@@ -7,9 +7,6 @@ const morgan = require('morgan');
 const productsBuffer = fs.readFileSync(path.join(__dirname, 'data/products.json'));
 const products = JSON.parse(productsBuffer);
 
-const productBuffer = fs.readFileSync(path.join(__dirname, 'data/product.json'));
-const product = JSON.parse(productBuffer);
-
 const recommendationsBuffer = fs.readFileSync(path.join(__dirname, 'data/recommendations.json'));
 const recommendations = JSON.parse(recommendationsBuffer);
 

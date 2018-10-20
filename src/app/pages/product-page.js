@@ -23,7 +23,6 @@ class ProductPage extends Component {
             info={this.props.productInfo}
             id={this.props.match.params.id}
           />
-        <Results />
       </main>
     );
   }
