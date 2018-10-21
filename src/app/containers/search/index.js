@@ -15,8 +15,8 @@ class Search extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
-        <input aria-label="Search" className="search-input" type="search" name="query" autocomplete="off" />
-        <button class="search-icon" value="Search"><SearchIcon /></button>
+        <input aria-label="Search" className="search-input" type="search" name="query" autoComplete="off" />
+        <button className="search-icon" value="Search.."><SearchIcon /></button>
       </form>
     );
   }
