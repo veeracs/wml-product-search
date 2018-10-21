@@ -19,6 +19,7 @@
   border: 1px solid #ccc;
   border-right: 0;
   font-size: 16px;
+  z-index: 1;
 }
 
 .search-button {
@@ -48,4 +49,23 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.search-icon {
+  width: 30px;
+  height: 36px;
+  margin-top: -3px;
+  margin-left: -1px;
+  z-index: 0;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+  padding: 2px 5px 0 0;
+  cursor: pointer;
+}
+
+button.search-icon:active {
+  border-top: 1px solid #ccc;
 }

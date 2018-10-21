@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {fetchItems} from '../../actions';
+
+import SearchIcon from 'svg-react-loader?name=SearchIcon!./search.svg';
 import './index.css';
 
 class Search extends Component {
@@ -13,8 +15,8 @@ class Search extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
-        <input className="search-input" type="search" name="query" />
-        <button className="search-button" value="Search">Search</button>
+        <input aria-label="Search" className="search-input" type="search" name="query" autocomplete="off" />
+        <button class="search-icon" value="Search"><SearchIcon /></button>
       </form>
     );
   }

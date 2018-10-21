@@ -8,14 +8,21 @@
 
 body {
   margin: 0 auto;
+  line-height: 1.5em;
   font-family: 'BogleWebBlack', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  line-height: 1.5em;
+}
+
+/* Set link styles */
 a, a:active, a:focus, a:hover {
   text-decoration: underline;
   color: #000;
 }
 
+/* Remove outline from input fields */
 textarea,
 select,
 input,

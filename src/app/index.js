@@ -10,7 +10,7 @@ import Footer from '../app/containers/footer';
 
 const App = () => {
   return (
-    <div>
+    <React.Fragment>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -18,7 +18,7 @@ const App = () => {
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 
