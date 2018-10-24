@@ -1,4 +1,4 @@
-import {getProduct} from '../../api';
+import {getProduct} from '../api';
 
 /* Actions */
 export const FETCH_PRODUCT_START = 'FETCH_PRODUCT_START';

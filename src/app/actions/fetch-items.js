@@ -1,4 +1,4 @@
-import {getItems} from '../../api';
+import {getItems} from '../api';
 
 /* Actions */
 export const FETCH_ITEMS_START = 'FETCH_ITEMS_START';
