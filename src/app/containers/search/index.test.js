@@ -5,7 +5,7 @@ import {Search} from './';
 
 describe('Search', () => {
   test('rendering', () => {
-    const wrapper = shallow(<Search />);
+    const wrapper = shallow(<Search handleSubmit={() => {}}/>);
     expect(wrapper).toMatchSnapshot();
   });
 });
