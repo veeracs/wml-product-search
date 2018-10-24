@@ -7,7 +7,7 @@ import {fetchItems} from '../../actions';
 import SearchIcon from 'svg-react-loader?name=SearchIcon!./search.svg';
 import './index.css';
 
-class Search extends Component {
+export class Search extends Component {
   constructor() {
     super();
   }

@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --config ./webpack.client.js --mode development",
     "format": "prettier --single-quote --print-width=120 --parser=flow --tab-width=2 --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint ./src --quiet",
-    "test": "jest"
+    "jest": "jest",
+    "jest:update": "jest --updateSnapshot"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "@babel/core": "7.1.2",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.4",
     "chai-enzyme": "1.0.0-beta.1",
@@ -38,7 +40,9 @@
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-react": "7.11.1",
+    "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
+    "jest-svg-transformer": "1.0.0",
     "morgan": "1.9.1",
     "prettier": "1.14.3",
     "react-hot-loader": "4.3.11",
@@ -64,6 +68,10 @@
     "redux-thunk": "2.3.0"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./src/setupTests.js"
+    "setupTestFrameworkScriptFile": "./src/setup-tests.js",
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy",
+      "\\.(svg)$": "jest-svg-transformer"
+    }
   }
 }
