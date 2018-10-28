@@ -8,9 +8,9 @@
     "dev": "webpack-dev-server --config ./webpack.client.js --mode development",
     "format": "prettier --single-quote --print-width=120 --parser=flow --tab-width=2 --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint ./src --quiet",
-    "jest": "jest",
+    "jest": "jest --silent",
     "jest:update": "jest --updateSnapshot",
-    "jest:coverage": "jest --updateSnapshot"
+    "jest:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "@babel/core": "7.1.2",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
+    "axios-mock-adapter": "1.15.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.4",
@@ -75,6 +76,9 @@
       "\\.(svg)$": "jest-svg-transformer"
     },
     "collectCoverage": true,
-    "coverageReporters": ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   }
 }

@@ -11,6 +11,7 @@
 * State Management - Redux
 * Code Fomatter - Prettier
 * normalize.css - Normalize User Agent Styles
+* Snapshot Testing - Jest
 
 ## Scripts
 
@@ -18,11 +19,13 @@
 * Start API [server](http://localhost: 3000) - `npm run api`
 * Format code - `npm run format`
 * Lint code - `npm run lint`
+* Snapshot Testing Components - `npm run jest`
+* Update Jest Snapshots - `npm run jest:update`
+* Generate Code Coverage - `npm run jest:coverage`
 
 ## Outstanding
 
 * Visual Regression Testing - Storybook
-* Tesing Components - Enzyme
 * Test Runner - Mocha
 * Assertion Library - Chai
 * Cross-browser Testing - Ava, WebDriverJs
