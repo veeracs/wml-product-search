@@ -12,6 +12,7 @@
 * Code Fomatter - Prettier
 * normalize.css - Normalize User Agent Styles
 * Snapshot Testing - Jest
+* Component Assertion Library - Enzyme
 
 ## Scripts
 
@@ -26,6 +27,4 @@
 ## Outstanding
 
 * Visual Regression Testing - Storybook
-* Test Runner - Mocha
-* Assertion Library - Chai
 * Cross-browser Testing - Ava, WebDriverJs
