@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {fetchItems} from '../../actions';
+import { fetchItems } from '../../actions';
 
 import SearchIcon from 'svg-react-loader?name=SearchIcon!./search.svg';
 import './index.css';
@@ -16,7 +16,9 @@ export class Search extends Component {
     return (
       <form onSubmit={this.props.handleSubmit}>
         <input aria-label="Search" className="search-input" type="search" name="query" autoComplete="off" />
-        <button className="search-icon" value="Search.."><SearchIcon /></button>
+        <button className="search-icon" value="Search..">
+          <SearchIcon />
+        </button>
       </form>
     );
   }
@@ -31,22 +33,23 @@ Search.defaultProps = {
   items: []
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    handleSubmit: (event) => {
+    handleSubmit: event => {
       event.preventDefault();
       const formData = new FormData(event.target);
-      dispatch(
-        fetchItems(formData.get('query'))
-      );
+      dispatch(fetchItems(formData.get('query')));
     }
   };
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     items: state.items.payload
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Search);

@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './index.css';
 
-const Product = ({id, info}) => {
+const Product = ({ id, info }) => {
   return (
     <section className="grid-container">
       <div className="grid-item-1">
@@ -14,7 +14,7 @@ const Product = ({id, info}) => {
       <div className="grid-item-2">
         <h1>{info.name}</h1>
         <span>${info.salePrice}</span>
-        <article dangerouslySetInnerHTML={{__html: info.shortDescription}}></article>
+        <article dangerouslySetInnerHTML={{ __html: info.shortDescription }} />
       </div>
     </section>
   );
@@ -23,6 +23,6 @@ const Product = ({id, info}) => {
 Product.propTypes = {
   id: PropTypes.string.isRequired,
   info: PropTypes.object.isRequired
-}
+};
 
 export default Product;

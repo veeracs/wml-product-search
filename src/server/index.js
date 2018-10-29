@@ -10,9 +10,7 @@ const products = JSON.parse(productsBuffer);
 const recommendationsBuffer = fs.readFileSync(path.join(__dirname, 'data/recommendations.json'));
 const recommendations = JSON.parse(recommendationsBuffer);
 
-
 const app = express();
-
 
 app.use(cors());
 app.use(morgan('combined'));
@@ -27,8 +25,8 @@ app.get('/search/:query', (req, res) => {
 });
 
 app.get('/product/:id', (req, res) => {
-  const item = products.items.find((item) => {
-    return (req.params.id === item.itemId.toString());
+  const item = products.items.find(item => {
+    return req.params.id === item.itemId.toString();
   });
   setTimeout(() => res.json(item), Math.floor(Math.random * 500));
 });
@@ -43,6 +41,6 @@ app.get('*', (req, res) => {
 });
 
 //	start server
-app.listen(3000, function () {
+app.listen(3000, function() {
   console.log('API Server listening at http://localhost:3000');
 });

@@ -1,4 +1,4 @@
-import {getProduct} from '../api';
+import { getProduct } from '../api';
 
 /* Actions */
 export const FETCH_PRODUCT_START = 'FETCH_PRODUCT_START';
@@ -10,18 +10,18 @@ const fetchProductStart = () => ({
   type: FETCH_PRODUCT_START
 });
 
-const fetchProductFailure = (error) => ({
+const fetchProductFailure = error => ({
   type: FETCH_PRODUCT_FAILURE,
   error
 });
 
-const fetchProductSuccess = (payload) => ({
+const fetchProductSuccess = payload => ({
   type: FETCH_PRODUCT_SUCCESS,
   payload
 });
 
 /* Thunk */
-export const fetchProduct = (query) => async (dispatch) => {
+export const fetchProduct = query => async dispatch => {
   let response;
 
   try {
@@ -29,7 +29,7 @@ export const fetchProduct = (query) => async (dispatch) => {
       dispatch(fetchProductStart());
       response = await getProduct(query);
     }
-  } catch(error) {
+  } catch (error) {
     dispatch(fetchProductFailure(error));
   }
 
@@ -40,4 +40,4 @@ export const fetchProduct = (query) => async (dispatch) => {
 
     dispatch(fetchProductFailure(error));
   }
-}
+};

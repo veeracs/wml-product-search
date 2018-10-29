@@ -1,49 +1,51 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './index.css';
 
-const renderItems = (items) => {
-  return items.map(
-    (item) => {
-      return (
-        <div key={item.itemId} className="product-card">
-          <div className="product-image">
-            <Link to={`/product/${item.itemId}`}><img src={item.thumbnailImage} /></Link>
-          </div>
-          <div className="product-info">
-            <h5><Link to={`/product/${item.itemId}`}>{item.name}</Link></h5>
-            {item.customerRating && <span><img src={item.customerRatingImage} /></span>}
-            <h6>${item.salePrice}</h6>
-          </div>
+const renderItems = items => {
+  return items.map(item => {
+    return (
+      <div key={item.itemId} className="product-card">
+        <div className="product-image">
+          <Link to={`/product/${item.itemId}`}>
+            <img src={item.thumbnailImage} />
+          </Link>
         </div>
-      );
-    }
-  );
+        <div className="product-info">
+          <h5>
+            <Link to={`/product/${item.itemId}`}>{item.name}</Link>
+          </h5>
+          {item.customerRating && (
+            <span>
+              <img src={item.customerRatingImage} />
+            </span>
+          )}
+          <h6>${item.salePrice}</h6>
+        </div>
+      </div>
+    );
+  });
 };
 
-const Results = ({items}) => {
-  return (
-    <section className="products">
-      {renderItems(items)}
-    </section>
-  );
-}
+const Results = ({ items }) => {
+  return <section className="products">{renderItems(items)}</section>;
+};
 
 Results.propTypes = {
   items: PropTypes.array
 };
 
 PropTypes.defaultProps = {
-    items: []
+  items: []
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     items: state.items.payload
-  }
+  };
 };
 
 export default connect(mapStateToProps)(Results);

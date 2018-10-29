@@ -1,4 +1,4 @@
-import {getItems} from '../api';
+import { getItems } from '../api';
 
 /* Actions */
 export const FETCH_ITEMS_START = 'FETCH_ITEMS_START';
@@ -10,18 +10,18 @@ const fetchItemsStart = () => ({
   type: FETCH_ITEMS_START
 });
 
-const fetchItemsFailure = (error) => ({
+const fetchItemsFailure = error => ({
   type: FETCH_ITEMS_FAILURE,
   error
 });
 
-const fetchItemsSuccess = (payload) => ({
+const fetchItemsSuccess = payload => ({
   type: FETCH_ITEMS_SUCCESS,
   payload
 });
 
 /* Thunk */
-export const fetchItems = (query) => async (dispatch) => {
+export const fetchItems = query => async dispatch => {
   let response;
 
   try {
@@ -29,7 +29,7 @@ export const fetchItems = (query) => async (dispatch) => {
       dispatch(fetchItemsStart());
       response = await getItems(query);
     }
-  } catch(error) {
+  } catch (error) {
     dispatch(fetchItemsFailure(error));
   }
 
@@ -40,4 +40,4 @@ export const fetchItems = (query) => async (dispatch) => {
 
     dispatch(fetchItemsFailure(error));
   }
-}
+};

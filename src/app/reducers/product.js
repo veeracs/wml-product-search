@@ -1,4 +1,4 @@
-import {FETCH_PRODUCT_START, FETCH_PRODUCT_SUCCESS, FETCH_PRODUCT_FAILURE} from '../actions';
+import { FETCH_PRODUCT_START, FETCH_PRODUCT_SUCCESS, FETCH_PRODUCT_FAILURE } from '../actions';
 
 const defaultState = {
   payload: {},
@@ -9,7 +9,7 @@ const defaultState = {
 };
 
 export default (state = defaultState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case FETCH_PRODUCT_START:
       return {
         ...state,
@@ -25,7 +25,7 @@ export default (state = defaultState, action) => {
         isLoading: false,
         isError: false,
         isSuccess: true
-      }
+      };
 
     case FETCH_PRODUCT_FAILURE:
       return {
@@ -34,9 +34,9 @@ export default (state = defaultState, action) => {
         isLoading: false,
         isError: true,
         isSuccess: false
-      }
+      };
 
     default:
       return state;
   }
-}
+};

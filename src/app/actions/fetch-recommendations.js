@@ -1,4 +1,4 @@
-import {getRecommendations} from '../api';
+import { getRecommendations } from '../api';
 
 /* Actions */
 export const FETCH_RECOMMENDATIONS_START = 'FETCH_RECOMMENDATIONS_START';
@@ -10,18 +10,18 @@ const fetchRecommendationsStart = () => ({
   type: FETCH_RECOMMENDATIONS_START
 });
 
-const fetchRecommendationsFailure = (error) => ({
+const fetchRecommendationsFailure = error => ({
   type: FETCH_RECOMMENDATIONS_FAILURE,
   error
 });
 
-const fetchRecommendationsSuccess = (payload) => ({
+const fetchRecommendationsSuccess = payload => ({
   type: FETCH_RECOMMENDATIONS_SUCCESS,
   payload
 });
 
 /* Thunk */
-export const fetchRecommendations = (query) => async (dispatch) => {
+export const fetchRecommendations = query => async dispatch => {
   let response;
 
   try {
@@ -29,7 +29,7 @@ export const fetchRecommendations = (query) => async (dispatch) => {
       dispatch(fetchRecommendationsStart());
       response = await getRecommendations(query);
     }
-  } catch(error) {
+  } catch (error) {
     dispatch(fetchRecommendationsFailure(error));
   }
 
@@ -42,4 +42,4 @@ export const fetchRecommendations = (query) => async (dispatch) => {
 
     dispatch(fetchRecommendationsFailure(error));
   }
-}
+};
