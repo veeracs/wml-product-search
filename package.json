@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "api": "node src/server",
-    "dev": "webpack-dev-server --config ./webpack.client.js --mode development",
+    "dev": "cp -R './src/client/assets/fonts/' './dist' && webpack-dev-server --config ./webpack.client.js --mode development",
     "format": "prettier --single-quote --print-width=120 --parser=flow --tab-width=2 --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint ./src --quiet",
     "jest": "jest --silent",
