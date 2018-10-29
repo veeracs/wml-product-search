@@ -1,7 +1,7 @@
-import {FETCH_PRODUCT_START, FETCH_PRODUCT_SUCCESS, FETCH_PRODUCT_FAILURE} from '../actions';
+import {FETCH_RECOMMENDATIONS_START, FETCH_RECOMMENDATIONS_SUCCESS, FETCH_RECOMMENDATIONS_FAILURE} from '../actions';
 
 const defaultState = {
-  payload: {},
+  payload: [],
   error: {},
   isLoading: false,
   isSuccess: false,
@@ -10,7 +10,7 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch(action.type) {
-    case FETCH_PRODUCT_START:
+    case FETCH_RECOMMENDATIONS_START:
       return {
         ...state,
         isLoading: true,
@@ -18,7 +18,7 @@ export default (state = defaultState, action) => {
         isSuccess: false
       };
 
-    case FETCH_PRODUCT_SUCCESS:
+    case FETCH_RECOMMENDATIONS_SUCCESS:
       return {
         ...state,
         payload: action.payload,
@@ -27,7 +27,7 @@ export default (state = defaultState, action) => {
         isSuccess: true
       }
 
-    case FETCH_PRODUCT_FAILURE:
+    case FETCH_RECOMMENDATIONS_FAILURE:
       return {
         ...state,
         error: action.error,

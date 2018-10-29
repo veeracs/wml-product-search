@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import {fetchProduct} from '../actions';
+import {fetchRecommendations} from '../actions';
 
 import Product from '../containers/product';
 import Results from '../containers/results';
@@ -14,6 +15,7 @@ class ProductPage extends Component {
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.id);
+    this.props.fetchRecommendations(this.props.match.params.id);
   }
 
   render() {
@@ -31,7 +33,8 @@ class ProductPage extends Component {
 ProductPage.propTypes = {
   productInfo: PropTypes.object,
   match: PropTypes.object,
-  fetchProduct: PropTypes.func
+  fetchProduct: PropTypes.func,
+  fetchRecommendations: PropTypes.func
 };
 
 function mapStateToProps(state) {
@@ -40,4 +43,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {fetchProduct})(ProductPage);
+export default connect(mapStateToProps, {fetchProduct, fetchRecommendations})(ProductPage);
