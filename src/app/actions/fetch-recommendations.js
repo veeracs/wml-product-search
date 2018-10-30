@@ -34,8 +34,6 @@ export const fetchRecommendations = query => async dispatch => {
   }
 
   if (response.statusText === 'OK') {
-    console.log(query);
-    console.log(response.data);
     dispatch(fetchRecommendationsSuccess(response.data));
   } else {
     const error = new Error('Invalid API response');
