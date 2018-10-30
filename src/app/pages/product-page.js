@@ -22,6 +22,9 @@ class ProductPage extends Component {
     return (
       <main>
         <Product info={this.props.productInfo} id={this.props.match.params.id} />
+        <hr />
+        <h2>Recommendations</h2>
+        <Results items={this.props.items} />
       </main>
     );
   }
@@ -29,6 +32,7 @@ class ProductPage extends Component {
 
 ProductPage.propTypes = {
   productInfo: PropTypes.object,
+  items: PropTypes.array,
   match: PropTypes.object,
   fetchProduct: PropTypes.func,
   fetchRecommendations: PropTypes.func
@@ -36,7 +40,8 @@ ProductPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    productInfo: state.product.payload
+    productInfo: state.product.payload,
+    items: state.recommendations.payload
   };
 }
 

@@ -1,11 +1,26 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import Results from '../containers/results';
+import PropTypes from 'prop-types';
 
-const HomePage = () => (
+const HomePage = ({ items }) => (
   <main>
-    <Results />
+    <Results items={items} />
   </main>
 );
 
-export default HomePage;
+HomePage.propTypes = {
+  items: PropTypes.array
+};
+
+HomePage.defaultProps = {
+  items: []
+};
+
+const mapStateToProps = state => {
+  return {
+    items: state.items.payload
+  };
+};
+
+export default connect(mapStateToProps)(HomePage);

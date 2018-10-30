@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -42,10 +41,4 @@ PropTypes.defaultProps = {
   items: []
 };
 
-const mapStateToProps = state => {
-  return {
-    items: state.items.payload
-  };
-};
-
-export default connect(mapStateToProps)(Results);
+export default Results;

@@ -11,6 +11,12 @@ body {
   line-height: 1.5em;
   font-family: 'BogleWebBlack', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+hr {
+  border: none;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
 
 h1 {
   line-height: 1.5em;
