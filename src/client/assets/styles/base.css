@@ -30,6 +30,12 @@ button {
   outline: none;
 }
 
+/* Responsive Images */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 main {
   margin: 0 auto 5% auto;
   max-width: 1500px;
