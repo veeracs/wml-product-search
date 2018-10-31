@@ -24,6 +24,7 @@
   "homepage": "https://github.com/veeracs/wml-product-search#readme",
   "devDependencies": {
     "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "axios-mock-adapter": "1.15.0",

@@ -11,17 +11,36 @@ import Results from '../containers/results';
 class ProductPage extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
+  }
+
+  static getDerivedStateFromProps = (nextProps, prevState) => {
+    if (prevState.productId !== nextProps.productId) {
+      return {
+        productId: nextProps.match.params.id
+      };
+    }
+    return;
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.state.productId !== prevProps.match.params.id) {
+      prevProps.handleFetchProduct(this.state.productId);
+    }
   }
 
   componentDidMount() {
-    this.props.fetchProduct(this.props.match.params.id);
-    this.props.fetchRecommendations(this.props.match.params.id);
+    this.setState({
+      productId: this.props.match.params.id
+    });
+    this.props.handleFetchProduct(this.props.match.params.id);
+    this.props.handleFetchRecommendations(this.props.match.params.id);
   }
 
   render() {
     return (
       <main>
-        <Product info={this.props.productInfo} id={this.props.match.params.id} />
+        <Product info={this.props.productInfo} id={this.state.productId} />
         <hr />
         <h2>Recommendations</h2>
         <Results items={this.props.items} />
@@ -34,8 +53,8 @@ ProductPage.propTypes = {
   productInfo: PropTypes.object,
   items: PropTypes.array,
   match: PropTypes.object,
-  fetchProduct: PropTypes.func,
-  fetchRecommendations: PropTypes.func
+  handleFetchProduct: PropTypes.func,
+  handleFetchRecommendations: PropTypes.func
 };
 
 function mapStateToProps(state) {
@@ -45,7 +64,18 @@ function mapStateToProps(state) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    handleFetchProduct: (id) => {
+      dispatch(fetchProduct(id));
+    },
+    handleFetchRecommendations: (id) => {
+      dispatch(fetchRecommendations(id));
+    }
+  };
+}
+
 export default connect(
   mapStateToProps,
-  { fetchProduct, fetchRecommendations }
+  mapDispatchToProps
 )(ProductPage);
