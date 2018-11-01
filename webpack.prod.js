@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'production',
+  devtool: 'source-map',
   //  tell webpack, the entry point of server application
   entry: ['@babel/polyfill', './src/client/index.js'],
 
@@ -12,12 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)?$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
       },

@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "api": "node src/server",
-    "dev": "cp -R './src/client/assets/fonts/' './dist' && webpack-dev-server --config ./webpack.client.js --mode development",
+    "build:dev": "cp -R './src/client/assets/fonts/' './dist' && webpack-dev-server --config ./webpack.dev.js --mode development",
+    "build:prod": "cp -R './src/client/assets/fonts/' './dist' && webpack --config ./webpack.prod.js --progress --hide-modules",
     "format": "prettier --single-quote --print-width=120 --parser=flow --tab-width=2 --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint ./src --quiet",
+    "lint:fix": "eslint ./src --fix",
     "jest": "jest --silent",
     "jest:update": "jest --updateSnapshot",
     "jest:coverage": "jest --coverage"
