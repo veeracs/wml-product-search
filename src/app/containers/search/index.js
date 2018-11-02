@@ -10,7 +10,7 @@ import './index.css';
 export const Search = ({handleSubmit}) => (
   <form onSubmit={handleSubmit}>
     <input aria-label="Search" className="search-input" type="search" name="query" autoComplete="off" />
-    <button className="search-icon" value="Search">
+    <button className="search-icon" value="Search" aria-label="Search Walmart products">
       <SearchIcon />
     </button>
   </form>
