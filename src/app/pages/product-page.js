@@ -66,10 +66,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleFetchProduct: (id) => {
+    handleFetchProduct: id => {
       dispatch(fetchProduct(id));
     },
-    handleFetchRecommendations: (id) => {
+    handleFetchRecommendations: id => {
       dispatch(fetchRecommendations(id));
     }
   };

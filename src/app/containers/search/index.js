@@ -7,7 +7,7 @@ import { fetchItems } from '../../actions';
 import SearchIcon from 'svg-react-loader?name=SearchIcon!./search.svg';
 import './index.css';
 
-export const Search = ({handleSubmit}) => (
+export const Search = ({ handleSubmit }) => (
   <form onSubmit={handleSubmit}>
     <input aria-label="Search" className="search-input" type="search" name="query" autoComplete="off" />
     <button className="search-icon" value="Search" aria-label="Search Walmart products">
