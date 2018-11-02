@@ -11,7 +11,7 @@
     "lint": "eslint ./src --quiet",
     "lint:fix": "eslint ./src --fix",
     "jest": "jest --silent",
-    "jest:update": "jest --updateSnapshot",
+    "jest:update": "jest --updateSnapshot --silent",
     "jest:coverage": "jest --coverage"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.4",
+    "chai": "4.2.0",
     "chai-enzyme": "1.0.0-beta.1",
     "css-loader": "1.0.0",
     "enzyme": "3.7.0",

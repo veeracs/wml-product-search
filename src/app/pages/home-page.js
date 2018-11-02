@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Results from '../containers/results';
 import PropTypes from 'prop-types';
 
-const HomePage = ({ items }) => (
+export const HomePage = ({ items }) => (
   <main>
     <Results items={items} />
   </main>
